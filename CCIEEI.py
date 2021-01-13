@@ -15,7 +15,7 @@ daan = {q1:'B',q2:' A',q3:'CE',q4:'C',q5:'CD',q6:'A'}
 for i in range(3):
     timu1 = random.choice(que) #列表中随机选择题目
     print('QUESTION',i+1,timu1)
-    que.remove(timu1) #将已经选择过的题目移除放在重复
+    que.remove(timu1) #将已经选择过的题目移除防止重复
     shuru = input('输入答案:')
     if shuru.upper() == daan[timu1]: #输入的题目答案和答案字典对比是否正确
         zhengque +=1
