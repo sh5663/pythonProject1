@@ -1,0 +1,15 @@
+#需要把ip地址转换为10进制数,然后也可以把10进制数转化为ip地址,计算机ping这个十进制数可以ping通对应的ip地址,说明已经实现功能代码如下
+#引用正则来三等分字符串
+
+
+def int32_to_ip(int32):
+  import re
+  bi = "{0:b}".format(int32)
+  bi = "0" * (32 - len(bi)) + bi
+
+  ret_ip_string = '.'.join(list(map(lambda x: str(int(x, 2)), re.findall(r'.{8}', bi))))
+  return ret_ip_string
+
+if __name__ == '__main__':
+  ip = int32_to_ip(18223104)
+  print(ip)
