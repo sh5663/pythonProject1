@@ -1,0 +1,10 @@
+#1：仔细分析，IP地址的四个10进制数，实际上就是256进制
+#2：10进制数除以256，余数就是IP地址右侧的数字，商继续除256即可
+def int2ip(digit):
+    result = []
+    for i in range(4):
+        digit, mod = divmod(digit, 256)
+        result.insert(0,mod)
+    return '.'.join(map(str,result))
+if __name__ == '__main__':
+    print(int2ip(364285615))
